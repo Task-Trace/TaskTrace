@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+*.tsbuildinfo
+
+# Turbo
+.turbo/
+
+# Bun
+bun.lock
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# TaskTrace local data
+.tasktrace/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Coverage
+coverage/

@@ -1,0 +1,36 @@
+{
+	"name": "@tasktrace/adapter-clickup",
+	"version": "0.0.1",
+	"description": "ClickUp adapter for TaskTrace",
+	"type": "module",
+	"main": "./src/index.ts",
+	"exports": {
+		".": {
+			"bun": "./src/index.ts",
+			"import": "./dist/index.js",
+			"types": "./dist/index.d.ts"
+		}
+	},
+	"files": [
+		"dist",
+		"README.md"
+	],
+	"scripts": {
+		"build": "tsc",
+		"typecheck": "tsc --noEmit",
+		"test": "bun test",
+		"dev": "tsc --watch"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/userNanni/TaskTrace.git",
+		"directory": "packages/adapter-clickup"
+	},
+	"dependencies": {
+		"@tasktrace/core": "workspace:*"
+	}
+}

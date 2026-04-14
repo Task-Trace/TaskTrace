@@ -1,0 +1,41 @@
+{
+	"name": "@tasktrace/core",
+	"version": "0.0.1",
+	"description": "Git-native developer worklog engine",
+	"type": "module",
+	"main": "./src/index.ts",
+	"exports": {
+		".": {
+			"bun": "./src/index.ts",
+			"import": "./dist/index.js",
+			"types": "./dist/index.d.ts"
+		}
+	},
+	"files": [
+		"dist",
+		"README.md"
+	],
+	"scripts": {
+		"build": "tsc",
+		"typecheck": "tsc --noEmit",
+		"test": "bun test",
+		"dev": "tsc --watch"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/userNanni/TaskTrace.git",
+		"directory": "packages/core"
+	},
+	"dependencies": {
+		"proper-lockfile": "^4.1.2",
+		"ulid": "^2.3.0",
+		"zod": "^3.24.4"
+	},
+	"devDependencies": {
+		"@types/proper-lockfile": "^4.1.4"
+	}
+}
