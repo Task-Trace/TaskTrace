@@ -31,6 +31,14 @@ jobs:
       - name: Build all packages
         run: bun run build
 
+      - name: Verify build artifacts
+        run: |
+          test -f packages/core/dist/index.js          || (echo "MISSING: core/dist/index.js" && exit 1)
+          test -f packages/cli/dist/index.js           || (echo "MISSING: cli/dist/index.js" && exit 1)
+          test -f packages/adapter-clickup/dist/index.js || (echo "MISSING: adapter-clickup/dist/index.js" && exit 1)
+          test -f packages/mcp-server/dist/index.js    || (echo "MISSING: mcp-server/dist/index.js" && exit 1)
+          echo "All dist artifacts present"
+
       - name: Create Version PR or Publish to npm
         id: changesets
         uses: changesets/action@v1
